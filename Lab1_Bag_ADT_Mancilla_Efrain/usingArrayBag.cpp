@@ -22,6 +22,23 @@ int main()
 		bag.add(initialValues[i]);
 	}  // end for
 
+	int menu_option;
+	std::cout << "Welcome to the bag ADT!" << std::endl;
+	do {
+		// menu for client code
+		std::cout << "Please enter an option" << std::endl;
+		std::cout << "1) Display the bag\n" <<
+		"2) Add a value to the bag\n" <<
+		"3) Remove a value from the bag\n" <<
+		"4) Sort the bag\n" <<
+		"5) Search for a value in the bag\n" <<
+		"-1) Exit\n" << std::endl;
+		std::cin >> menu_option;
+
+
+	} while (menu_option != -1);
+	
+
 	// sorts the bag
 	bag.bubble_sort();
 
