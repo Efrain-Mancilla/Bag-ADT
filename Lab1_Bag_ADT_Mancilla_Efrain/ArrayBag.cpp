@@ -8,7 +8,6 @@ void ArrayBag<ItemType>::bubble_sort() {
    // local variables for bubble sort
    int index, test;
    bool swapped;
-   std::cout << "Beginning sorting...";
    // for loop that checks to see if anything is swapped, if unchanged then array is sorted
    for (index = 0; index < itemCount - 1; index++) {
       swapped = false;
@@ -24,7 +23,6 @@ void ArrayBag<ItemType>::bubble_sort() {
       }
       // if the loop circles through without swapping then it is sorted
       if (!swapped) {
-         std::cout << " all done!" << std::endl;
          sorted = true;
          break;
       }      
