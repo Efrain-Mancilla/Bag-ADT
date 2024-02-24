@@ -4,9 +4,6 @@
 
 using namespace std;
 
-
-void bagTester(ArrayBag<int>& bag);
-
 int main()
 {
 	// Array bag to hold integers
@@ -116,31 +113,6 @@ int main()
 		}
 	} while (menu_option != -1);
 	
-	// Call a funciton that exercises
-	// some of the bag methods
-	bagTester(bag);
-	
-
    return 0;
    
 }  // end main
-
-/****************************************************************
-* Function:   bagTester
-* Inputs:     the array bag
-* Outputs:    none
-* Purpose:    This function exercises some of the bag methods
-****************************************************************/
-
-void bagTester(ArrayBag<int>& bag)
-{
-	cout << "The bag is not empty; isEmpty: returns " << bag.isEmpty() << endl;
-
-	cout << "About to clear the bag, ";
-	bag.clear();
-   
-	cout << "isEmpty: returns " << bag.isEmpty() << endl;
-}  // end bagTester
-
-
-

@@ -31,7 +31,7 @@ void ArrayBag<ItemType>::bubble_sort() {
 
 template <class ItemType>
 bool ArrayBag<ItemType>::is_sorted() const {
-    return sorted; // returns sorted boolean value
+   return sorted; // returns sorted boolean value
 }
 
 template <class ItemType>
