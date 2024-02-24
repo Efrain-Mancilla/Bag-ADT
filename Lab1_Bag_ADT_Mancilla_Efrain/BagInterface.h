@@ -7,6 +7,9 @@ template<class ItemType>
 class BagInterface
 {
 public:
+	// Confirms input validation that new value entered is a digit
+	// Returns boolean value if input is a digit or not
+	virtual bool is_number(std::string user_input) = 0; 
 	// Bubble sort interface for virtual method
 	// Iterates through the array and swaps items if the former is larger than
 	// the latter in the index

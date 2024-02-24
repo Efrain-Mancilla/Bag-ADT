@@ -99,6 +99,18 @@ ArrayBag<ItemType>::ArrayBag(): itemCount(0), maxItems(DEFAULT_CAPACITY)
 {
 }  // end default constructor
 
+template <class ItemType>
+bool ArrayBag<ItemType>::is_number(std::string user_input){
+   bool is_number = true;
+   for (int index = 0; index < user_input.length(); index++) {
+      if (!isdigit(user_input[index])) {
+         is_number = false;
+         break;
+      }
+   }
+   return is_number;
+}
+
 template<class ItemType>
 int ArrayBag<ItemType>::getCurrentSize() const
 {
@@ -119,6 +131,7 @@ bool ArrayBag<ItemType>::add(const ItemType& newEntry)
 	{
 		items[itemCount] = newEntry;
 		itemCount++;
+      sorted = false;
 	}  // end if
     
 	return hasRoomToAdd;
@@ -133,6 +146,7 @@ bool ArrayBag<ItemType>::remove(const ItemType& anEntry)
 	{
 		itemCount--;
 		items[locatedIndex] = items[itemCount];
+      sorted = false;
 	}  // end if
     
 	return canRemoveItem;
@@ -167,33 +181,6 @@ bool ArrayBag<ItemType>::contains(const ItemType& anEntry) const
 {
 	return getIndexOf(anEntry) > -1;
 }  // end contains
-
-/* ALTERNATE 1: First version
-template<class ItemType>
-bool ArrayBag<ItemType>::contains(const ItemType& target) const 
-{
-   return getFrequencyOf(target) > 0;
-}  // end contains
-
-// ALTERNATE 2: Second version 
-template<class ItemType>
-bool ArrayBag<ItemType>::contains(const ItemType& anEntry) const
-{
-   bool found = false;
-   int curIndex = 0;        // Current array index
-   while (!found && (curIndex < itemCount))
-   {
-      if (anEntry == items[curIndex])
-      {
-         found = true;
-      } // end if
-      
-      curIndex++;           // Increment to next entry
-   }  // end while   
-   
-   return found;
-}  // end contains
-*/
 
 template<class ItemType>
 std::vector<ItemType> ArrayBag<ItemType>::toVector() const

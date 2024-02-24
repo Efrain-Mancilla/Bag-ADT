@@ -20,6 +20,7 @@ private:
 
 public:
 	ArrayBag();
+	bool is_number(std::string user_input);
 	void bubble_sort(); // bubble sort method returns true once fully sorted
 	bool is_sorted() const; // getter for sorted attribute
 	int iterative_bin_search(ItemType target, int left_bound, int right_bound); // Iterative binary search
